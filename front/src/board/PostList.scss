@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    thead {
+        th {
+            height: 40px;
+            border-bottom: 1px solid #333;
+            
+        }
+    }
+    tbody {
+        td {
+            height: 30px;
+        }
+    }
+}

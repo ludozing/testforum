@@ -4,9 +4,9 @@ import { API_URL } from '../config/constants';
 import useAsync from '../hooks/useAsync';
 import './PostList.scss';
 
-function PostList(props) {
+function PostList({postClass}) {
     async function getPosts(){
-        const response = await axios.get(`${API_URL}/getPosts`)
+        const response = await axios.post(`${API_URL}/getPosts`, postClass)
         return response.data;
     }
     const state = useAsync(getPosts);

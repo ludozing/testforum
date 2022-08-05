@@ -17,8 +17,9 @@ mongoose.connect('mongodb://localhost:27017/test', {
 
 const { Post } = require('./models/Post');
 
-app.get('/getPosts', async(req, res)=>{
-    const posts = await Post.find({});
+app.post('/getPosts', async(req, res)=>{
+    const { postClass } = req.body
+    const posts = await Post.find({postClass});
     try {
         return res.status(200).json(posts)
     } catch(err) {return res.status(500).json({error: err});}
